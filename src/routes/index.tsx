@@ -3,7 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import { Container } from "@material-ui/core";
 
 //Pages
-import { HomePage, WhoIsMillianaire } from "../pages";
+import HomePage from "../pages/HomePage";
+import WhoIsMillianaire from "../pages/WhoIsMillianaire";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

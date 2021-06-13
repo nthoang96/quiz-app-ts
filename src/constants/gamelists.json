@@ -8,21 +8,21 @@
   },
   {
     "id": 2,
-    "route": "/flappy-bird",
+    "route": "/",
     "imgLink": "https://cdn.vox-cdn.com/thumbor/qV6KOiJc3-1sO36Y-VsiEddNba4=/47x0:572x350/1200x800/filters:focal(47x0:572x350)/cdn.vox-cdn.com/uploads/chorus_image/image/28172849/flappy-bird-.0.jpg",
     "imgAlt": "Flappy Bird",
     "is_release": false
   },
   {
     "id": 3,
-    "route": "/sudoku",
+    "route": "/",
     "imgLink": "https://th.bing.com/th/id/OIP.m8XIyd_wjAUYKnj1Sk2IxgHaFj?pid=ImgDet&rs=1",
     "imgAlt": "Sudoku",
     "is_release": false
   },
   {
     "id": 4,
-    "route": "/fruit-ninja",
+    "route": "/",
     "imgLink": "https://th.bing.com/th/id/Re4832d96495d94acaf9cf77e7d861849?rik=PgabRX7cWUrjmA&riu=http%3a%2f%2fwww.naldotech.com%2fwp-content%2fuploads%2f2014%2f10%2ffruit-ninja-2.jpg&ehk=7u9Yctbva0nXxqrbzFjUWUgxGs%2bnLxkypG8EJNCSrvk%3d&risl=&pid=ImgRaw",
     "imgAlt": "Fruit Ninja",
     "is_release": false

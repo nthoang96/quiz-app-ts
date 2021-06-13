@@ -1,5 +1,5 @@
 import { Grid } from "@material-ui/core";
-import { CardGame } from "../../containers";
+import CardGame from "../../containers/CardGame";
 import GameLists from "../../constants/gamelists.json";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const HomePage: React.FC = () => {
+const HomePage: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -23,6 +23,7 @@ export const HomePage: React.FC = () => {
               link={data.route}
               imgLink={data.imgLink}
               imgAlt={data.imgAlt}
+              isRelease={data.is_release}
             />
           </Grid>
         ))}
@@ -30,3 +31,5 @@ export const HomePage: React.FC = () => {
     </>
   );
 };
+
+export default HomePage;
