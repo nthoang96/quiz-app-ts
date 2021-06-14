@@ -1,10 +1,13 @@
+import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { AppBar, Button, Toolbar, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import withLogin from "../../hoc/withLogin";
-import { useDispatch } from "react-redux";
-import { showLogin } from "../../store/slices";
+import { useDispatch, useSelector } from "react-redux";
+import { setDisplayName, showLogin } from "../Login/loginSlice";
+import { selectDisplayName } from "../../store/store";
+import MenuLogout from "./MenuLogout";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,6 +30,14 @@ const useStyles = makeStyles((theme: Theme) =>
 const Header: React.FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const displayName = useSelector(selectDisplayName);
+
+  React.useEffect(() => {
+    const disName = localStorage.getItem("displayName");
+    if (disName) {
+      dispatch(setDisplayName(disName));
+    }
+  });
 
   const handleShowLogin = () => {
     dispatch(showLogin());
@@ -55,9 +66,13 @@ const Header: React.FC = () => {
           <Button href="/">
             <Typography color="textSecondary">Home</Typography>
           </Button>
-          <Button onClick={handleShowLogin}>
-            <Typography color="textSecondary">Login</Typography>
-          </Button>
+          {displayName ? (
+            <MenuLogout displayName={displayName} />
+          ) : (
+            <Button onClick={handleShowLogin}>
+              <Typography color="textSecondary">Login</Typography>
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
     </div>

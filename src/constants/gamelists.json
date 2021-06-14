@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "route": "/who-is-the-millianaire",
-    "imgLink": "https://th.bing.com/th/id/OIP.n5OiQZzeJOaCNx7rySvjMgHaHa?pid=ImgDet&w=512&h=512&rs=1",
+    "route": "/quiz-game",
+    "imgLink": "https://federicobellucci.net/wp-content/uploads/2020/07/1595331110_maxresdefault.jpg",
     "imgAlt": "Who is the Millianaire",
     "is_release": true
   },

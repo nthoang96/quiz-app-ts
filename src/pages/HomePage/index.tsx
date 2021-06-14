@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
     <>
       <Grid container spacing={2}>
         {GameLists.map((data) => (
-          <Grid item xs={6} className={classes.root}>
+          <Grid item xs={6} className={classes.root} key={data.id}>
             <CardGame
               link={data.route}
               imgLink={data.imgLink}

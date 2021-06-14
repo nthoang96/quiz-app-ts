@@ -1,11 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface LoginSliceState {
   useLogin: boolean;
+  displayName: string;
 }
 
 const initialLoginState: LoginSliceState = {
   useLogin: false,
+  displayName: "",
 };
 
 export const loginSlice = createSlice({
@@ -18,7 +20,10 @@ export const loginSlice = createSlice({
     hideLogin: (state) => {
       state.useLogin = false;
     },
+    setDisplayName: (state, action: PayloadAction<string>) => {
+      state.displayName = action.payload;
+    },
   },
 });
 
-export const { showLogin, hideLogin } = loginSlice.actions;
+export const { showLogin, hideLogin, setDisplayName } = loginSlice.actions;

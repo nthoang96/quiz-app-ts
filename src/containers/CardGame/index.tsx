@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { CardMedia, CardContent, Typography } from "@material-ui/core";
+import { useDispatch, useSelector } from "react-redux";
+import { selectDisplayName } from "../../store/store";
+import { showLogin } from "../Login/loginSlice";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,13 +42,21 @@ interface CardGameProps {
 
 const CardGame: React.FC<CardGameProps> = (props) => {
   const classes = useStyles();
+  const displayName = useSelector(selectDisplayName);
+  const dispatch = useDispatch();
   const { link, imgLink, imgAlt, isRelease } = props;
+
+  const handleClick = () => {
+    if (!displayName) {
+      dispatch(showLogin());
+    }
+  };
 
   return (
     <>
-      <Link to={link} className={classes.link}>
+      <Link to={link} className={classes.link} onClick={handleClick}>
         <CardMedia image={imgLink} title={imgAlt} className={classes.root}>
-          {isRelease || (
+          {isRelease ? null : (
             <CardContent className={classes.text}>
               <Typography variant="h3" color="textSecondary">
                 Comming Soon

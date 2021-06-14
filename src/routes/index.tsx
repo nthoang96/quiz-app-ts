@@ -4,7 +4,8 @@ import { Container } from "@material-ui/core";
 
 //Pages
 import HomePage from "../pages/HomePage";
-import WhoIsMillianaire from "../pages/WhoIsMillianaire";
+import ProtectedRoute from "./ProtectedRoute";
+import Quizz from "../pages/Quizz";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -21,12 +22,8 @@ export const Routes: React.FC = () => {
     <div className={classes.root}>
       <Container>
         <Switch>
-          <Route path="/who-is-the-millianaire">
-            <WhoIsMillianaire />
-          </Route>
-          <Route path="/">
-            <HomePage />
-          </Route>
+          <ProtectedRoute path="/quiz-game" component={Quizz} />
+          <Route path="/" component={HomePage} />
         </Switch>
       </Container>
     </div>
