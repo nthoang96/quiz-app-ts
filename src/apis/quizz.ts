@@ -43,9 +43,9 @@ class Quizz {
       .then((resp) => resp.data.result);
   public readonly post = (answer: {
     listAnswer: Answer[];
-  }): Promise<SuccessResult | FailedResult> =>
+  }): Promise<SuccessResult & FailedResult> =>
     this.restClient
-      .post<SuccessResult | FailedResult>("/quiz/answer", answer)
+      .post<SuccessResult & FailedResult>("/quiz/answer", answer)
       .then((resp) => resp.data);
 }
 
