@@ -7,7 +7,8 @@ interface ProtectedRouteProps extends RouteProps {}
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ ...rest }) => {
   const displayName = useSelector(selectDisplayName);
-  if (displayName) {
+  const displayNameFromLocal = localStorage.getItem("displayName");
+  if (displayName || displayNameFromLocal) {
     return <Route {...rest} />;
   }
   return <Redirect to="/" />;
